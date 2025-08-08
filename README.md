@@ -1,17 +1,18 @@
 # Sistema Bancário em Python
 
-![Versão](https://img.shields.io/badge/vers%C3%A3o-2.0-blueviolet)
+![Versão](https://img.shields.io/badge/vers%C3%A3o-3.0-blueviolet)
 ![Linguagem](https://img.shields.io/badge/linguagem-Python-blue)
 
 ## 📄 Descrição do Projeto
 
-Este projeto implementa um sistema bancário em Python. Nascido de um desafio da [DIO](https://www.dio.me/). Que visava criar as operações básicas de depósito, saque e extrato, o sistema foi posteriormente refatorado para sua v2. A versão atual introduz uma arquitetura modular baseada em funções e expande as capacidades do sistema, permitindo o cadastro de múltiplos usuários e a criação de contas correntes.
+Este projeto é um sistema bancário desenvolvido em Python, inspirado em um desafio da [DIO](https://www.dio.me/) que propunha criar as operações básicas de depósito, saque e extrato. Com o tempo, o código foi refatorado e aprimorado, ganhando uma arquitetura mais robusta, agora estruturada com os princípios da Programação Orientada a Objetos (POO).
 
 ## ⚙️ Funcionalidades
 
 ### Gerenciamento
 -   [x] **Criar Usuário:** Cadastra um novo cliente no sistema.
 -   [x] **Criar Conta Corrente:** Cadastra uma nova conta bancária vinculada a um usuário.
+-   [x] **Listar Contas:** Exibe os dados de todas as contas cadastradas.
 
 ### Operações Bancárias
 -   [x] **Depositar:** Permite ao usuário depositar valores positivos em sua conta.
@@ -61,7 +62,21 @@ Este projeto implementa um sistema bancário em Python. Nascido de um desafio da
   -   **Novas Funcionalidades:**
       -   **Criar Usuário:** Implementar uma função para cadastrar novos clientes no banco.
       -   **Criar Conta Corrente:** Desenvolver uma função para criar uma nova conta bancária, vinculando-a a um usuário já existente.
-      -   **Consulta de Contas Correntes Cadastradas:** Listar todas as contas correntes cadastradas, exibindo para cada uma os detalhes de agência, número da conta e o nome do titular.</p>
+      -   **Consulta de Contas Correntes Cadastradas:** Listar todas as contas correntes cadastradas, exibindo para cada uma os detalhes de agência, número da conta e o nome do titular.
+      
+      ---
+
+  ### Detalhamento da v3:
+
+A terceira versão do sistema marca uma refatoração completa, migrando do paradigma procedural para a Programação Orientada a Objetos (POO). O objetivo foi construir uma base mais robusta, escalável e coesa, seguindo boas práticas de modelagem e organização do código.
+
+- **Modelagem de Domínio**: Criação de classes para representar as principais entidades — Cliente, PessoaFisica, Conta, ContaCorrente e Historico.
+
+- **Sistema de Transações**: Implementação de uma classe abstrata Transacao, da qual herdam as classes concretas Saque e Deposito, permitindo polimorfismo, centralização do registro de operações e facilidade para incluir novas transações futuramente.
+
+- **Separação de Responsabilidades**: Cada classe gerencia seu próprio estado e comportamento. Por exemplo, apenas a classe Conta pode alterar seu saldo e registrar movimentações no Historico.
+
+- **Desacoplamento**: A função principal (main) foi simplificada e passou a atuar como uma camada de orquestração, delegando as tarefas para os objetos corretos.</p>
 </details>
 
 
